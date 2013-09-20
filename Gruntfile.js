@@ -1,11 +1,17 @@
 module.exports = function(grunt) {
-  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-uglify')
 
   grunt.initConfig({
-    jshint: {
-      files: ['lib/konami-code.js']
+    uglify: {
+      options: {
+        report: 'gzip',
+        sourceMap: './lib/konami-code.map'
+      },
+      main: {
+        files: {
+          './lib/konami-code.min.js': './lib/konami-code.js'
+        }
+      }
     }
-  });
-
-  grunt.registerTask('test', ['jshint']);
-};
+  })
+}

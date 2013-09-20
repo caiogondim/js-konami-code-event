@@ -1,0 +1,24 @@
+{
+  "name": "konami-code",
+  "version": "0.0.1",
+  "description": "JS lib that triggers a 'konami-code' event when a konami code sequence is typed",
+  "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/caiogondim/konami-code.git"
+  },
+  "keywords": [
+    "javascript",
+    "konami",
+    "code"
+  ],
+  "author": "Caio Gondim",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/caiogondim/konami-code/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.4"
+  }
+}
