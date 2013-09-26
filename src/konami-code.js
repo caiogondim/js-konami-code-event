@@ -11,7 +11,7 @@
       this.KEY_DOWN = 40
       this.KEY_A = 65
       this.KEY_B = 66
-      this.KONAMI_CODE_SEQUENCE = '38384040373937396665' // ⬆ ⬆ ⬇ ⬇ ⬅ ➡ ⬅ ➡ B A
+      this.KONAMI_CODE_SEQUENCE = '38384040373937396665' // ⬆ ⬆ ⬇ ⬇ ⬅ ➡ ⬅ ➡ b a
 
       this.bindListener()
 
