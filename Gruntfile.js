@@ -1,8 +1,28 @@
+/* global module */
+
+var jsFiles = [
+  'lib/konami-code.js',
+  'Gruntfile.js'
+]
+
 module.exports = function(grunt) {
+  'use strict';
+
   grunt.loadNpmTasks('grunt-contrib-uglify')
   grunt.loadNpmTasks('grunt-contrib-jshint')
+  grunt.loadNpmTasks('grunt-contrib-watch')
+  grunt.loadNpmTasks('grunt-notify')
 
   grunt.initConfig({
+    watch: {
+      js: {
+        files: jsFiles,
+        tasks: ['jshint', 'uglify'],
+        options: {
+          debounceDelay: 500
+        }
+      }
+    },
     uglify: {
       options: {
         report: 'gzip',
@@ -15,7 +35,7 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      files: ['lib/konami-code.js'],
+      files: jsFiles,
       options: {
         camelcase: true,
         curly: true,
@@ -40,4 +60,6 @@ module.exports = function(grunt) {
       }
     }
   })
+
+  grunt.registerTask('default', 'watch')
 }
