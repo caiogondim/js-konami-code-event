@@ -1,8 +1,8 @@
 /* global module */
 
 var jsFiles = [
-  'src/konami-code.js',
-  'Gruntfile.js'
+  'src/konami-code.js'
+, 'Gruntfile.js'
 ]
 
 module.exports = function(grunt) {
@@ -16,27 +16,27 @@ module.exports = function(grunt) {
   grunt.initConfig({
     watch: {
       js: {
-        files: jsFiles,
-        tasks: ['jshint', 'uglify'],
-        options: {
+        files  : jsFiles
+      , tasks  : ['jshint', 'uglify']
+      , options: {
           debounceDelay: 500
         }
       }
-    },
-    uglify: {
+    }
+  , uglify: {
       options: {
-        report: 'gzip',
-        sourceMap: './lib/konami-code.map'
-      },
-      main: {
+        report   : 'gzip'
+      , sourceMap: './src/konami-code.map'
+      }
+    , main: {
         files: {
           './src/konami-code.min.js': './src/konami-code.js'
         }
       }
-    },
-    jshint: {
-      files: jsFiles,
-      options: grunt.file.readJSON('.jshintrc')
+    }
+  , jshint: {
+      files  : jsFiles
+    , options: grunt.file.readJSON('.jshintrc')
     }
   })
 
