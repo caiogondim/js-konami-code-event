@@ -1,7 +1,7 @@
 /* global module */
 
 var jsFiles = [
-  'lib/konami-code.js',
+  'src/konami-code.js',
   'Gruntfile.js'
 ]
 
@@ -30,34 +30,13 @@ module.exports = function(grunt) {
       },
       main: {
         files: {
-          './lib/konami-code.min.js': './lib/konami-code.js'
+          './src/konami-code.min.js': './src/konami-code.js'
         }
       }
     },
     jshint: {
       files: jsFiles,
-      options: {
-        camelcase: true,
-        curly: true,
-        eqeqeq: true,
-        forin: true,
-        immed: true,
-        indent: 2,
-        latedef: true,
-        newcap: true,
-        noarg: true,
-        noempty: true,
-        nonew: true,
-        plusplus: true,
-        quotmark: 'single',
-        undef: true,
-        unused: true,
-        strict: true,
-        trailing: true,
-        maxparams: 3,
-        maxlen: 80,
-        asi: true
-      }
+      options: grunt.file.readJSON('.jshintrc')
     }
   })
 
