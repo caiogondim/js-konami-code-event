@@ -3,6 +3,7 @@
 var jsFiles = [
   'src/konami-code.js'
 , 'Gruntfile.js'
+, 'test/spec.js'
 ]
 
 module.exports = function(grunt) {
