@@ -14,6 +14,17 @@ During the title screen before the game demo begins, the player could press the
 following sequence of buttons on the game controller to enable the cheat:
 ⬆ ⬆ ⬇ ⬇ ⬅ ➡ ⬅ ➡ B A
 
+# How to install
+
+You can install through _Bower_
+
+```bash
+bower install konami-code-event
+```
+
+Or just download the minified JS file through this
+[link](https://raw.github.com/caiogondim/js-konami-code-event/master/src/konami-code.min.js)
+
 # How to use
 
 Load the script in your web app/site and listen for the event `konamiCode` in
