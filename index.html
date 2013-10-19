@@ -233,7 +233,11 @@
     </div>
   </div>
   <img src="/images/toasty.gif" alt="Toasty" class="toasty">
-  <audio class="toasty-sound" src="sounds/toasty.mp3" preload="preload" />
+  <audio class="toasty-sound" preload="preload">
+    <source src="sounds/toasty.m4a" type="audio/m4a" />
+    <source src="sounds/toasty.ogg" type="audio/ogg" />
+    <source src="sounds/toasty.mp3" type="audio/mp3" />
+  </audio>
   <script src="/bower_components/konami-code-event/src/konami-code.min.js"></script>
   <script>
     //
