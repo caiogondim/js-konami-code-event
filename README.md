@@ -14,6 +14,8 @@ During the title screen before the game demo begins, the player could press the
 following sequence of buttons on the game controller to enable the cheat:
 ⬆ ⬆ ⬇ ⬇ ⬅ ➡ ⬅ ➡ B A
 
+You can see a demo [here](http://caiogondim.github.io/js-konami-code-event/)
+
 # How to install
 
 You can install through _Bower_
