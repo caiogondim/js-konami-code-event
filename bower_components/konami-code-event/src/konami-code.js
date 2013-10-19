@@ -34,6 +34,7 @@
 
           if (buffer.indexOf(this.CODE_SEQUENCE) >= 0) {
             bodyElement.dispatchEvent(konamiCodeEvent)
+            buffer = ''
           }
 
         } else {
