@@ -1,0 +1,160 @@
+@font-face {
+  font-family: "Silkscreen";
+  src: url('../fonts/silkscreen.woff') format('woff'),
+       url('../fonts/silkscreen.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background-color: #151515;
+}
+
+.wrapper {
+  position: absolute;
+  height: 400px;
+  width: 900px;
+  left: 50%;
+  margin-left: -450px;
+  top: 50%;
+  margin-top: -200px;
+}
+
+
+/* Title -------------------------------------------------------------------- */
+
+.title {
+  margin-bottom: 30px;
+  color: #AC4142;
+  text-align: center;
+  letter-spacing: -8px;
+  font-size: 80px;
+  font-family: Silkscreen;
+}
+
+.instructions {
+  position: absolute;
+  left: 50%;
+  display: inline-block;
+  visibility: visible;
+  margin-left: -200px;
+  margin-bottom: 30px;
+  width: 400px;
+  color: #F5F5F5;
+  text-align: center;
+  letter-spacing: -4px;
+  font-size: 25px;
+  font-family: Silkscreen;
+}
+
+.instructions-js {
+  color: #F4BF75;
+}
+
+
+/* Keys --------------------------------------------------------------------- */
+
+.code-sequence {
+  position: absolute;
+  left: 50%;
+  margin-left: -393px;
+  margin-top: 90px;
+}
+
+.key-wrapper {
+  display: inline-block;
+  margin-left: 5px;
+  width: 70px;
+  height: 70px;
+  border-radius: 40%;
+  background-color: #B0B0B0;
+  position: relative;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.key {
+  position: absolute;
+  display: block;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  color: #151515;
+  font-size: 70px;
+  font-family: Silkscreen;
+}
+
+.key-up {
+  bottom: -15px;
+}
+
+.key-inverse {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  width: 70px;
+  height: 70px;
+  display: inline-block;
+}
+
+.key-left {
+  top: 5px;
+  right: -15px;
+}
+
+.key-a {
+  right: -10px;
+  bottom: -12px;
+  font-weight: bold;
+  font-family: Helvetica;
+}
+
+.key-b {
+  right: -10px;
+  bottom: -12px;
+  font-weight: bold;
+  font-family: Helvetica;
+}
+
+
+/* Toasty ------------------------------------------------------------------- */
+
+.toasty {
+  display: block;
+  position: fixed;
+  right: -96px;
+  bottom: -94px;
+  transition: all 0.3s ease-in-out;
+}
+
+.is-visible {
+  right: 0px;
+  bottom: 0px;
+}
+
+
+/* Browser specific hacks --------------------------------------------------- */
+
+@-moz-document url-prefix() {
+  .key-a {
+    bottom: -18px;
+  }
+
+  .key-b {
+    bottom: -18px;
+  }
+}
