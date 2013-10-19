@@ -1,1 +1,265 @@
-My Page
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Konami Code Event</title>
+  <style>
+
+    @font-face {
+      font-family: "Silkscreen";
+      src: url('fonts/silkscreen.woff') format('woff'),
+           url('fonts/silkscreen.ttf') format('truetype');
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    html {
+      height: 100%;
+    }
+
+    body {
+      height: 100%;
+      background-color: #151515;
+    }
+
+    .wrapper {
+      position: absolute;
+      height: 400px;
+      width: 900px;
+      left: 50%;
+      margin-left: -450px;
+      top: 50%;
+      margin-top: -200px;
+    }
+
+    /* Title ---------------------------------------------------------------- */
+
+    .title {
+      margin-bottom: 30px;
+      color: #AC4142;
+      text-align: center;
+      letter-spacing: -8px;
+      font-size: 80px;
+      font-family: Silkscreen;
+    }
+
+    .instructions {
+      position: absolute;
+      left: 50%;
+      display: inline-block;
+      visibility: visible;
+      margin-left: -200px;
+      margin-bottom: 30px;
+      width: 400px;
+      color: #F5F5F5;
+      text-align: center;
+      letter-spacing: -4px;
+      font-size: 25px;
+      font-family: Silkscreen;
+    }
+
+    .instructions-js {
+      color: #F4BF75;
+    }
+
+    /* Keys ----------------------------------------------------------------- */
+
+    .code-sequence {
+      position: absolute;
+      left: 50%;
+      margin-left: -393px;
+      margin-top: 90px;
+    }
+
+    .key-wrapper {
+      display: inline-block;
+      margin-left: 5px;
+      width: 70px;
+      height: 70px;
+      border-radius: 40%;
+      background-color: #505050;
+      position: relative;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      -webkit-transform: scale(0.8);
+      -moz-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+      -o-transform: scale(0.8);
+      transform: scale(0.8);
+    }
+
+    .key-wrapper.was-pressed {
+      background-color: white;
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      transform: scale(1);
+    }
+
+    .key {
+      position: absolute;
+      display: block;
+      width: 70px;
+      height: 70px;
+      line-height: 70px;
+      color: #151515;
+      font-size: 70px;
+      font-family: Silkscreen;
+    }
+
+    .key-up {
+      bottom: -15px;
+    }
+
+    .key-inverse {
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+      width: 70px;
+      height: 70px;
+      display: inline-block;
+    }
+
+    .key-left {
+      top: 5px;
+      right: -15px;
+    }
+
+    .key-a {
+      right: -10px;
+      bottom: -12px;
+      font-weight: bold;
+      font-family: Helvetica;
+    }
+
+    .key-b {
+      right: -10px;
+      bottom: -12px;
+      font-weight: bold;
+      font-family: Helvetica;
+    }
+
+    .was-pressed {
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -o-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+    }
+
+
+    /* Toasty --------------------------------------------------------------- */
+
+    .toasty {
+      display: block;
+      position: fixed;
+      right: -96px;
+      bottom: -94px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .is-visible {
+      right: 0px;
+      bottom: 0px;
+    }
+
+
+    /* Browser specific hacks ----------------------------------------------- */
+
+    @-moz-document url-prefix() {
+      .key-a {
+        bottom: -18px;
+      }
+
+      .key-b {
+        bottom: -18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1 class="title">Konami Code <span class="instructions-js">JS</span> event</h1>
+    <span class="instructions">press the sequence below on your keyoboard</span>
+    <div class="code-sequence">
+      <p class="key-wrapper was-pressed">
+        <span class="key key-up">⬆</span>
+      </p>
+      <p class="key-wrapper">
+        <span class="key key-up">⬆</span>
+      </p>
+      <p class="key-wrapper">
+        <span class="key-inverse">
+          <span class="key key-up">⬆</span>
+        </span>
+      </p>
+      <p class="key-wrapper">
+        <span class="key-inverse">
+          <span class="key key-up">⬆</span>
+        </span>
+      </p>
+      <p class="key-wrapper">
+        <span class="key key-left">⬅</span>
+      </p>
+      <p class="key-wrapper">
+        <span class="key-inverse">
+          <span class="key key-left">⬅</span>
+        </span>
+      </p>
+      <p class="key-wrapper">
+        <span class="key key-left">⬅</span>
+      </p>
+      <p class="key-wrapper">
+        <span class="key-inverse">
+          <span class="key key-left">⬅</span>
+        </span>
+      </p>
+      <p class="key-wrapper">
+        <span class="key key-b">B</span>
+      </p>
+      <p class="key-wrapper">
+        <span class="key key-a">A</span>
+      </p>
+    </div>
+  </div>
+  <img src="/images/toasty.gif" alt="Toasty" class="toasty">
+  <audio class="toasty-sound" src="sounds/toasty.mp3" preload="preload" />
+  <script src="/bower_components/konami-code-event/src/konami-code.min.js"></script>
+  <script>
+    //
+    var instructions = document.querySelector('.instructions')
+    instructions.style.visibility = 'visible'
+    setInterval(function () {
+      if (instructions.style.visibility == 'visible') {
+        instructions.style.visibility = 'hidden'
+      } else if (instructions.style.visibility == 'hidden') {
+        instructions.style.visibility = 'visible'
+      }
+    }, 500)
+
+    //
+    window.document.body.addEventListener('konamiCode', function (event) {
+      var toasty = document.querySelector('.toasty')
+      toasty.classList.add('is-visible')
+
+      setTimeout(function () {
+        document.querySelector('.toasty-sound').play()
+      }, 300)
+
+      setTimeout(function () {
+        toasty.classList.remove('is-visible')
+      }, 1000)
+    })
+  </script>
+</body>
+</html>

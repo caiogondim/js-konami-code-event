@@ -1,0 +1,29 @@
+{
+  "name": "konami-code",
+  "version": "1.0.1",
+  "homepage": "https://github.com/caiogondim/konami-code",
+  "authors": [
+    "Caio Gondim <me@caiogondim.com>"
+  ],
+  "description": "JS lib that triggers a 'konami-code' event when a konami code sequence is typed",
+  "main": "lib/konami-code.js",
+  "keywords": [
+    "konami"
+  ],
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "example",
+    "*.png",
+    "Gruntfile.js",
+    "package.json"
+  ],
+  "dependencies": {
+    "jasmine": "~1.3.1"
+  }
+}
