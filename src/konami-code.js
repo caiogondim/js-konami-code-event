@@ -1,46 +1,50 @@
 /* global Event, document */
 
-(function() {
+;(function() {
   'use strict';
+  // http://stackoverflow.com/a/9849276
+  var _contains =    function(a,b){return!!~a.indexOf(b) }
 
   var konamiCode = {
     init: function() {
-      this.KEY_LEFT      = 37
-      this.KEY_UP        = 38
-      this.KEY_RIGHT     = 39
-      this.KEY_DOWN      = 40
-      this.KEY_A         = 65
-      this.KEY_B         = 66
-      this.CODE_SEQUENCE = '38384040373937396665' // ⬆ ⬆ ⬇ ⬇ ⬅ ➡ ⬅ ➡ b a
+      this.KEY_LEFT      = 37 ;
+      this.KEY_UP        = 38 ;
+      this.KEY_RIGHT     = 39 ;
+      this.KEY_DOWN      = 40 ;
+      this.KEY_A         = 65 ;
+      this.KEY_B         = 66 ;
+      this.CODE_SEQUENCE = '38384040373937396665' ; // ⬆ ⬆ ⬇ ⬇ ⬅ ➡ ⬅ ➡ b a
 
-      this.bindListener()
+      this.maxDelay      = 1500 ; // a second and a half
 
-      return this
+      this.bindListener();
+
+      return this;
     }
-
   , bindListener: function() {
-      var konamiCodeEvent = new Event('konamiCode')
-      var bodyElement     = document.querySelector('body')
-      var buffer          = ''
+      var self            = this,
+          buffer          = '',
+          validKeys       = [this.KEY_LEFT,this.KEY_UP,this.KEY_RIGHT,this.KEY_DOWN,this.KEY_A,this.KEY_B],
+          lastDate        = new Date();
 
-      bodyElement.addEventListener('keyup', function(event) {
-        if (event.keyCode === this.KEY_LEFT ||
-            event.keyCode === this.KEY_UP ||
-            event.keyCode === this.KEY_RIGHT ||
-            event.keyCode === this.KEY_DOWN ||
-            event.keyCode === this.KEY_A ||
-            event.keyCode === this.KEY_B) {
-          buffer = buffer + event.keyCode
+      var konamiCodeEvent     = new Event('konamiCode');
 
-          if (buffer.indexOf(this.CODE_SEQUENCE) >= 0) {
-            bodyElement.dispatchEvent(konamiCodeEvent)
-            buffer = ''
+      document.addEventListener('keyup', function(ev) {
+
+        if (_contains(validKeys , ev.keyCode) && ((new Date() - lastDate) <= this.maxDelay)) {
+
+          lastDate = new Date();
+          buffer = buffer + ev.keyCode;
+          
+          if (_contains(buffer , this.CODE_SEQUENCE)) {
+            document.dispatchEvent(konamiCodeEvent);
+            buffer = '';
           }
-
         } else {
-          buffer = ''
+          lastDate = new Date();
+          buffer = '';
         }
-      }.bind(this))
+      }.bind(this));
     }
   }
 
