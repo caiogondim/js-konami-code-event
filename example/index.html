@@ -3,9 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <title>Konami Code</title>
-  <script src="../lib/konami-code.js" defer></script>
+  <script src="../src/konami-code.min.js" defer></script>
+
+  <style>
+  	body {
+  		-webkit-transition: background 0.5s ease-in-out;
+  		-moz-transition: background 0.5s ease-in-out;
+         -ms-transition: background 0.5s ease-in-out;
+         -o-transition: background 0.5s ease-in-out;
+  		transition: background 0.5s ease-in-out;
+  		background-color: whitesmoke;
+  	}
+  	.instructions {
+  		font-size:40px;
+  		text-align:center;
+  		padding:40px;
+  		color:#333333;
+  		line-height: 80px;
+  	}
+  	.shadow {
+  		color: #ffffff; text-shadow: 3px 3px 0px #ADADAD, 4px 4px 2px #8A8DA0;
+  		font-family: 'BazarMedium' , Arial , sans-serif; letter-spacing: 10px; 
+  	}
+  </style>
 </head>
 <body>
+
+	<div class='instructions'>
+		<span>
+			Type this sequence <br /><code class='shadow'>⬆ ⬆ ⬇ ⬇ ⬅ ➡ ⬅ ➡ B A</code><br /> to trigger the event
+			and change background color.
+		</span>
+	</div>
+
+<script>
+	(function() {
+		document.addEventListener('konamiCode', function() {
+			var color = [Math.round(Math.random() * 255),Math.round(Math.random() * 255),Math.round(Math.random() * 255)].join(',');
+			document.body.style.backgroundColor  = 'rgb(' + color + ')';
+		})
+	})();
+
+</script>
 
 </body>
 </html>
