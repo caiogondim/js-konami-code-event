@@ -14,6 +14,8 @@ During the title screen before the game demo begins, the player could press the
 following sequence of buttons on the game controller to enable the cheat:
 ⬆ ⬆ ⬇ ⬇ ⬅ ➡ ⬅ ➡ B A
 
+You can see a demo [here](http://caiogondim.github.io/js-konami-code-event/)
+
 # How to install
 
 You can install through _Bower_
@@ -45,6 +47,17 @@ $(document).on('konamiCode', function(event) {
 ```
 
 Type this sequence **⬆ ⬆ ⬇ ⬇ ⬅ ➡ ⬅ ➡ B A** to trigger the event.
+
+
+## How to contribute
+
+1. Fork this repository		
+2. Run `bower install` to install jasmine. 	
+3. Run `npm install` to install Grunt. 	
+4. Create a new branch for each feature or improvement	
+5. Ensure that your code is accompanied with tests. 	
+6. Send a pull request from each feature branch to the develop branch.
+
 
 ## License
 
