@@ -6,7 +6,7 @@ var jsFiles = [
 , 'test/spec.js'
 ]
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   'use strict';
 
   grunt.loadNpmTasks('grunt-contrib-uglify')
@@ -42,4 +42,5 @@ module.exports = function(grunt) {
   })
 
   grunt.registerTask('default', 'watch')
+  grunt.registerTask('test', ['jshint'])
 }
