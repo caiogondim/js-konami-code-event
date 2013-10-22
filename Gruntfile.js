@@ -41,6 +41,7 @@ module.exports = function (grunt) {
     }
   })
 
-  grunt.registerTask('default', 'watch')
+  grunt.registerTask('watch', 'watch')
   grunt.registerTask('test', ['jshint'])
+  grunt.registerTask('build', ['jshint', 'uglify:main'])
 }
