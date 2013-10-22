@@ -10,7 +10,7 @@ var main = (function() {
     }
 
   , _bindEvents: function() {
-      document.body.addEventListener('konamiCode', this.showToasty)
+      document.addEventListener('konamiCode', this.showToasty)
     }
 
   , _initInstructionsBlinkInterval: function() {
