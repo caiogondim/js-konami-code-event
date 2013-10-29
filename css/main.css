@@ -36,6 +36,25 @@ body {
   border: 0;
 }
 
+@-webkit-keyframes blink {
+        0%   { opacity: 1; }
+        80%  { opacity: 1; }
+        81%  { opacity: 0; }
+        100% { opacity: 0; }
+}
+@-moz-keyframes blink {
+        0%   { opacity: 1; }
+        80%  { opacity: 1; }
+        81%  { opacity: 0; }
+        100% { opacity: 0; }
+}
+@keyframes blink {
+        0%   { opacity: 1; }
+        80%  { opacity: 1; }
+        81%  { opacity: 0; }
+        100% { opacity: 0; }
+}
+
 
 
 /* Title -------------------------------------------------------------------- */
@@ -62,6 +81,9 @@ body {
   letter-spacing: -4px;
   font-size: 25px;
   font-family: Silkscreen;
+  -webkit-animation: blink 1s infinite;
+  -moz-animation: blink 1s infinite;
+  animation: blink 1s infinite;
 }
 
 .instructions-js {
