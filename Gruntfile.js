@@ -13,6 +13,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint')
   grunt.loadNpmTasks('grunt-contrib-watch')
   grunt.loadNpmTasks('grunt-notify')
+  grunt.loadNpmTasks('grunt-karma')
 
   grunt.initConfig({
     watch: {
@@ -39,9 +40,24 @@ module.exports = function (grunt) {
       files  : jsFiles
     , options: grunt.file.readJSON('.jshintrc')
     }
+  , karma: {
+      options: {
+        files: [
+          'test/helpers/jquery.js'
+        , 'test/helpers/jasmine-jquery.js'
+        , 'src/konami-code.js'
+        , 'test/spec.js'
+        ]
+      , frameworks: ['jasmine']
+      , browsers: ['Chrome', 'Firefox']
+      }
+    , dev: {
+        singleRun: true
+      }
+    }
   })
 
   grunt.registerTask('watch', 'watch')
-  grunt.registerTask('test', ['jshint'])
+  grunt.registerTask('test', ['jshint', 'karma'])
   grunt.registerTask('build', ['jshint', 'uglify:main'])
 }

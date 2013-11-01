@@ -1,6 +1,6 @@
 /* global Event, document */
 
-;(function () {
+(function () {
   'use strict';
 
   // http://stackoverflow.com/a/9849276
