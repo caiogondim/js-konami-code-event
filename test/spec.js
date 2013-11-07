@@ -1,15 +1,20 @@
 /* global document, window, Event, describe, it, expect, runs, beforeEach,
-   waitsFor */
+   waitsFor, $ */
 
 describe('Event konami code', function () {
   'use strict';
 
   var keyboardEvent = new Event('keyup'),
-      wasEventFired = false
+      wasVanillaListenerTriggered = false,
+      wasJqueryListenerTriggered = false
 
   document.addEventListener('konamiCode', function () {
-    wasEventFired = true
-  });
+    wasVanillaListenerTriggered = true
+  })
+
+  $(document).on('konamiCode', function () {
+    wasJqueryListenerTriggered = true
+  })
 
   function hitKey(keyCode) {
     keyboardEvent.keyCode = keyCode
@@ -17,7 +22,8 @@ describe('Event konami code', function () {
   }
 
   beforeEach(function () {
-    wasEventFired = false
+    wasVanillaListenerTriggered = false
+    wasJqueryListenerTriggered = false
   })
 
   it('Should fire the event when someone presses the konami code', function () {
@@ -26,14 +32,16 @@ describe('Event konami code', function () {
       hitKey(val)
     })
 
-    expect(wasEventFired).toEqual(true)
+    expect(wasVanillaListenerTriggered).toEqual(true)
+    expect(wasJqueryListenerTriggered).toEqual(true)
   })
 
   it('Don\'t fire the event if the sequence is incorrect', function () {
     [38, 38, 40, 40, 37, 39, 37, 39, 66, 66].forEach(function (val) {
       hitKey(val)
     })
-    expect(wasEventFired).toEqual(false)
+    expect(wasVanillaListenerTriggered).toEqual(false)
+    expect(wasJqueryListenerTriggered).toEqual(false)
   })
 
   it('Don\'t fire the event if the delay is higger than 1.5s', function () {
@@ -50,7 +58,8 @@ describe('Event konami code', function () {
     })
 
     runs(function () {
-      expect(wasEventFired).toEqual(false)
+      expect(wasVanillaListenerTriggered).toEqual(false)
+      expect(wasJqueryListenerTriggered).toEqual(false)
     })
   })
 })
