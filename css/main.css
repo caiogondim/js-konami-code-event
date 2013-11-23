@@ -11,6 +11,14 @@
   border: 0;
 }
 
+::selection {
+  background-color: #EEEEEE;
+}
+
+::-moz-selection {
+  background-color: #EEEEEE;
+}
+
 html {
   height: 100%;
 }
