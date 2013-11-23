@@ -49,17 +49,17 @@ $(document).on('konamiCode', function(event) {
 Type this sequence **⬆ ⬆ ⬇ ⬇ ⬅ ➡ ⬅ ➡ B A** to trigger the event.
 
 
-## How to contribute
+# How to contribute
 
-1. Fork this repository		
-2. Run `bower install` to install jasmine. 	
-3. Run `npm install` to install Grunt. 	
-4. Create a new branch for each feature or improvement	
-5. Ensure that your code is accompanied with tests. 	
-6. Send a pull request from each feature branch to the develop branch.
+1. Fork this repository
+2. Run `npm install`
+3. Create a new branch for each feature or improvement
+4. Ensure that your code is accompanied with tests
+5. Run `grunt test` to ensure that your new tests and the old ones are all passing
+6. Send a pull request from each feature branch
 
 
-## License
+# License
 
 Copyright © 2013 [Caio Gondim](http://caiogondim.com)
 
