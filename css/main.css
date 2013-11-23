@@ -1,7 +1,8 @@
 @font-face {
   font-family: "Silkscreen";
-  src: url('../fonts/silkscreen.woff') format('woff'),
-       url('../fonts/silkscreen.ttf') format('truetype');
+  src:
+    url('../fonts/silkscreen.woff') format('woff'),
+    url('../fonts/silkscreen.ttf') format('truetype');
 }
 
 * {
@@ -37,24 +38,25 @@ body {
 }
 
 @-webkit-keyframes blink {
-        0%   { opacity: 1; }
-        80%  { opacity: 1; }
-        81%  { opacity: 0; }
-        100% { opacity: 0; }
-}
-@-moz-keyframes blink {
-        0%   { opacity: 1; }
-        80%  { opacity: 1; }
-        81%  { opacity: 0; }
-        100% { opacity: 0; }
-}
-@keyframes blink {
-        0%   { opacity: 1; }
-        80%  { opacity: 1; }
-        81%  { opacity: 0; }
-        100% { opacity: 0; }
+  0%   { opacity: 1; }
+  80%  { opacity: 1; }
+  81%  { opacity: 0; }
+  100% { opacity: 0; }
 }
 
+@-moz-keyframes blink {
+  0%   { opacity: 1; }
+  80%  { opacity: 1; }
+  81%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes blink {
+  0%   { opacity: 1; }
+  80%  { opacity: 1; }
+  81%  { opacity: 0; }
+  100% { opacity: 0; }
+}
 
 
 /* Title -------------------------------------------------------------------- */
@@ -100,64 +102,55 @@ body {
   margin-top: 90px;
 }
 
-.key-wrapper {
+.key {
   display: inline-block;
   margin-left: 5px;
   width: 70px;
   height: 70px;
-  border-radius: 40%;
-  background-color: #B0B0B0;
-  position: relative;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
 }
 
-.key {
-  position: absolute;
-  display: block;
-  width: 70px;
-  height: 70px;
-  line-height: 70px;
-  color: #151515;
-  font-size: 70px;
-  font-family: Silkscreen;
+.key-arrow {
+  background-image: url(/images/key-arrow.png);
 }
 
 .key-up {
-  bottom: -15px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
-.key-inverse {
+.key-down {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -o-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
-  width: 70px;
-  height: 70px;
-  display: inline-block;
 }
 
 .key-left {
-  top: 5px;
-  right: -15px;
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+.key-right {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .key-a {
-  right: -10px;
-  bottom: -12px;
-  font-weight: bold;
-  font-family: Helvetica;
+  background-image: url(/images/key-a.png);
 }
 
 .key-b {
-  right: -10px;
-  bottom: -12px;
-  font-weight: bold;
-  font-family: Helvetica;
+  background-image: url(/images/key-b.png);
 }
 
 
@@ -172,19 +165,6 @@ body {
 }
 
 .is-visible {
-  right: 0px;
-  bottom: 0px;
-}
-
-
-/* Browser specific hacks --------------------------------------------------- */
-
-@-moz-document url-prefix() {
-  .key-a {
-    bottom: -18px;
-  }
-
-  .key-b {
-    bottom: -18px;
-  }
+  right: 0;
+  bottom: 0;
 }
