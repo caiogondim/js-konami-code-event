@@ -118,7 +118,7 @@ body {
 }
 
 .key-arrow {
-  background-image: url(/images/key-arrow.png);
+  background-image: url(../images/key-arrow.png);
 }
 
 .key-up {
@@ -154,11 +154,11 @@ body {
 }
 
 .key-a {
-  background-image: url(/images/key-a.png);
+  background-image: url(../images/key-a.png);
 }
 
 .key-b {
-  background-image: url(/images/key-b.png);
+  background-image: url(../images/key-b.png);
 }
 
 
