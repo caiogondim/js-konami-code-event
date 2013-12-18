@@ -1,4 +1,4 @@
-# Konami code [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+# Konami code [![Build Status](https://travis-ci.org/caiogondim/js-konami-code-event.png)](https://travis-ci.org/caiogondim/js-konami-code-event) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 <img
     src="https://raw.github.com/caiogondim/konami-code/master/konami-code-logo.png"
