@@ -1,4 +1,4 @@
-# Konami code
+# Konami code [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 <img
     src="https://raw.github.com/caiogondim/konami-code/master/konami-code-logo.png"
