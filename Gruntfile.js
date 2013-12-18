@@ -6,7 +6,7 @@ var jsFiles = [
 , 'test/spec.js'
 ]
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   'use strict';
 
   grunt.loadNpmTasks('grunt-contrib-uglify')
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
         , 'test/spec.js'
         ]
       , frameworks: ['jasmine']
-      , browsers: ['Chrome', 'Firefox']
+      , browsers: ['Firefox']
       }
     , dev: {
         singleRun: true

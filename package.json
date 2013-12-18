@@ -12,6 +12,9 @@
     "konami",
     "code"
   ],
+  "scripts": {
+    "test": "grunt test"
+  },
   "author": "Caio Gondim",
   "license": "BSD-2-Clause",
   "bugs": {

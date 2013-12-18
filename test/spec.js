@@ -4,9 +4,9 @@
 describe('Event konami code', function () {
   'use strict';
 
-  var keyboardEvent = new Event('keyup'),
-      wasVanillaListenerTriggered = false,
-      wasJqueryListenerTriggered = false
+  var keyboardEvent = new Event('keyup')
+  var wasVanillaListenerTriggered = false
+  var wasJqueryListenerTriggered = false
 
   document.addEventListener('konamiCode', function () {
     wasVanillaListenerTriggered = true
